@@ -1,27 +1,40 @@
-// O código abaixo tem alguns erros e não funciona como deveria. Você pode identificar quais são e corrigi-los em um arquivo TS?
+// O código abaixo tem alguns erros e não funciona como deveria.
+// Você pode identificar quais são e corrigi-los em um arquivo TS?
 
 let botaoAtualizar = document.getElementById('atualizar-saldo');
 let botaoLimpar = document.getElementById('limpar-saldo');
-let soma = document.getElementById('soma');
-let campoSaldo = document.getElementById('campo-saldo');
+let soma = document.getElementById('soma') as HTMLInputElement;
+const campoSaldo = document.getElementById('campo-saldo');
 
-campoSaldo.innerHTML = 0
+let Saldo = 0
 
-function somarAoSaldo(soma) {
-    campoSaldo.innerHTML += soma;
+
+function somarAoSaldo(soma: number) {
+    if (campoSaldo) {
+        campoSaldo.innerHTML += soma;
+    }
 }
 
 function limparSaldo() {
-    campoSaldo.innerHTML = '';
+    if (campoSaldo) {
+        campoSaldo.innerHTML = '';
+    }
 }
 
-botaoAtualizar.addEventListener('click', function () {
-    somarAoSaldo(soma.value);
-});
+if (botaoAtualizar) {
+    botaoAtualizar.addEventListener('click', function () {
+        if (soma) {
 
-botaoLimpar.addEventListener('click', function () {
-    limparSaldo();
-});
+            somarAoSaldo(Number(soma.value));
+        }
+    });
+
+}
+
+if (botaoLimpar)
+    botaoLimpar.addEventListener('click', function () {
+        limparSaldo();
+    });
 
 /**
     <h4>Valor a ser adicionado: <input id="soma"> </h4>

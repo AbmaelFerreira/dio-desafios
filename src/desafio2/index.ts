@@ -1,37 +1,44 @@
 // Como podemos melhorar o esse código usando TS? 
 
-enum Profissao = { 
+enum Profissao {
     Atriz,
-    Padeiro 
+    Padeiro
 }
 
-interface Pessoa extends Profissao {
-    nome: string;
-    idade: number;
-    profissao: Profissao;
+interface Pessoa {
+    nome: string,
+    idade: number,
+    profissao: Profissao
 
 }
 
 
 
-let pessoa1: Pessoa = {};
-pessoa1.nome = "maria";
-pessoa1.idade = 29;
-pessoa1.profissao = "atriz"
+const pessoa1: Pessoa = {
+    nome: 'Maria',
+    idade: 29,
+    profissao: Profissao.Atriz
 
-let pessoa2 = {}
-pessoa2.nome = "roberto";
-pessoa2.idade = 19;
-pessoa2.profissao = "Padeiro";
 
-let pessoa3 = {
-    nome: "laura",
-    idade: "32",
-    profissao: "Atriz"
 };
 
-let pessoa4 = {
-    nome = "carlos",
-    idade = 19,
-    profissao = "padeiro"
+
+
+const pessoa2: Pessoa = {
+    nome: 'Roberto',
+    idade: 19,
+    profissao: Profissao.Padeiro
 }
+
+const pessoa3: Pessoa = {
+    nome: 'laura',
+    idade: 32,
+    profissao: Profissao.Atriz
+}
+const pessoa4: Pessoa = {
+    nome: 'carlos',
+    idade: 19,
+    profissao: Profissao.Padeiro
+}
+
+
